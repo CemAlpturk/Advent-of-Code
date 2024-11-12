@@ -36,17 +36,6 @@ def part2() -> None:
     print(f"Part2: {val}")
 
 
-def part3() -> None:
-    filename = "part3-test.txt"
-    # filename = "part3.txt"
-
-    lines = read_input(filename)
-
-    val = 0
-    print(f"Part3: {val}")
-
-
 if __name__ == "__main__":
     part1()
     part2()
-    part3()
