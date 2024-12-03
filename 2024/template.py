@@ -1,7 +1,8 @@
 import os
+import time
 
 
-def read_input(filename: str) -> list[str]:
+def read_input(filename: str) -> str:
     dir = os.path.basename(__file__).split(".")[0]
 
     filepath = os.path.abspath(
@@ -14,9 +15,9 @@ def read_input(filename: str) -> list[str]:
     )
 
     with open(filepath, "r") as f:
-        lines = f.readlines()
+        data = f.read()
 
-    return [line.strip("\n") for line in lines]
+    return data
 
 
 def part1():
@@ -34,5 +35,12 @@ def part2():
 
 
 if __name__ == "__main__":
-    print(f"Part1: {part1()}")
-    print(f"Part2: {part2()}")
+    start = time.perf_counter()
+    result1 = part1()
+    elapsed1 = time.perf_counter() - start
+    print(f"Part1: {result1} (Time: {elapsed1:.6f}s)")
+
+    start = time.perf_counter()
+    result2 = part2()
+    elapsed2 = time.perf_counter() - start
+    print(f"Part2: {result2} (Time: {elapsed2:.6f}s)")
