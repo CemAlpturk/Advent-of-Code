@@ -1,0 +1,6 @@
+git+https://github.com/CemAlpturk/toolbox.git
+
+numpy
+tqdm
+black
+
