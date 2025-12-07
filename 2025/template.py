@@ -2,7 +2,7 @@ import os
 import time
 
 
-def read_input(filename: str) -> str:
+def read_input(filename: str) -> list[str]:
     dir = os.path.basename(__file__).split(".")[0]
 
     filepath = os.path.abspath(
@@ -15,9 +15,9 @@ def read_input(filename: str) -> str:
     )
 
     with open(filepath, "r") as f:
-        data = f.read()
+        lines = f.readlines()
 
-    return data
+    return [line.strip("\n") for line in lines]
 
 
 def part1():
