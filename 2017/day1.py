@@ -21,17 +21,36 @@ def read_input(filename: str) -> list[str]:
 
 
 def part1():
-    filename = "part1-test.txt"
-    # filename = "part1.txt"
+    # filename = "part1-test.txt"
+    filename = "part1.txt"
 
     lines = read_input(filename)
+    s = lines[0] 
+
+    c = 0
+    for i in range(len(s)):
+        a = s[i] 
+        b = s[(i + 1) % len(s)]
+        c += int(a) if a == b else 0
+
+    return c
 
 
 def part2():
-    filename = "part2-test.txt"
-    # filename = "part2.txt"
+    # filename = "part2-test.txt"
+    filename = "part1.txt"
 
     lines = read_input(filename)
+    s = lines[0] 
+
+    c = 0 
+    n = len(s)
+    for i in range(n):
+        a = s[i] 
+        b = s[(i + n//2) % n] 
+        c += int(a) if a == b else 0
+
+    return c 
 
 
 if __name__ == "__main__":
